@@ -1,11 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>tic tac toe</title>
-</head>
-<body>
-    <h1>tic tac toe</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+    <title>Tic-Tac-Toe</title>
+  </head>
+  <body>
+    <main class="content">
+      <div class="config">
+        <div class="switch">
+          <div class="quality">
+            <input checked id="xChar" name="Char" type="radio" value="x" />
+            <label for="xChar">X</label>
+          </div>
+          <div class="quality">
+            <input id="oChar" name="Char" type="radio" value="o" />
+            <label for="oChar">O</label>
+          </div>
+        </div>
+        <div class="select">
+          <select name="modes" id="modes">
+            <option value="easy">Easy</option>
+            <option value="normal">Normal</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+      </div>
+      <div class="theBoard">
+        <div class="board" id="board">
+          <div class="cell" data-cell="0"></div>
+          <div class="cell" data-cell="1"></div>
+          <div class="cell" data-cell="2"></div>
+          <div class="cell" data-cell="3"></div>
+          <div class="cell" data-cell="4"></div>
+          <div class="cell" data-cell="5"></div>
+          <div class="cell" data-cell="6"></div>
+          <div class="cell" data-cell="7"></div>
+          <div class="cell" data-cell="8"></div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="score">
+            <div class="userScore">
+                <span>You</span>
+                <span id="userS">0</span>
+            </div>
+            <div class="aiScore">
+                <span>Ai</span>
+                <span id="aiS">0</span>
+            </div>
+        </div>
+      </div>
+      <div class="winning-message" id="winningMessage">
+        <div data-winning-message-text></div>
+        <button id="restartButton">Restart</button>
+      </div>
+    </main>
+  </body>
 </html>

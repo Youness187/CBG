@@ -30,9 +30,10 @@ app.whenReady().then(() => {
 
 ipcMain.on("info:game", (e, game) => {
   gameWin = new BrowserWindow({
-    width: 400,
-    parent: win,
-    height: 400,
+    width: 500,
+    // parent: win,
+    height: 500,
+    alwaysOnTop: true,
     autoHideMenuBar: true,
     resizable: false,
     webPreferences: {
@@ -44,6 +45,10 @@ ipcMain.on("info:game", (e, game) => {
   gameWin.on("close", () => {
     gameWin = null;
   });
+});
+
+ipcMain.on("info:score", (e, score) => {
+  e.reply("finall:score", score*150);
 });
 
 app.on("window-all-closed", () => {
