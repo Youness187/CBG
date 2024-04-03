@@ -47,9 +47,6 @@ ipcMain.on("info:game", (e, game) => {
   });
 });
 
-ipcMain.on("info:score", (e, score) => {
-  e.reply("finall:score", score*150);
-});
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {

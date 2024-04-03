@@ -67,7 +67,6 @@ function modeEazy() {
 }
 
 function startGame() {
-  window.electronAPI.setTitle
   selectedIndex = mode.selectedIndex;
   cellElements.forEach((cell) => {
     boardHARD = ['', '', '', '', '', '', '', '', ''];
