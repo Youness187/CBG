@@ -28,6 +28,7 @@ app.whenReady().then(() => {
   });
 });
 
+
 ipcMain.on("info:game", (e, game) => {
   gameWin = new BrowserWindow({
     width: 500,
@@ -37,16 +38,19 @@ ipcMain.on("info:game", (e, game) => {
     autoHideMenuBar: true,
     resizable: false,
     webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false,
+      preload: path.join(__dirname, 'ticPreload.js'),
     },
   });
   gameWin.loadFile(`./src/Games/${game}/index.html`);
   gameWin.on("close", () => {
+    win.webContents.send('close:sub', game);
     gameWin = null;
   });
 });
 
+ipcMain.on("info:score", (e, s) => {
+  win.webContents.send('resend:score', s);
+})
 
 app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {

@@ -10,6 +10,7 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  animation: opacity 5000ms ease-in-out;
 }
 
 .main {
@@ -32,7 +33,29 @@
     box-shadow: 4px 4px #d49a98;
     transition: 100ms ease-in-out;
 }
+
+.games-holder div {
+    position: relative;
+}
+.games-holder div .game-score {
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    border-radius: 5px;
+    background: #d49a98;
+    transition: 100ms ease-in-out;
+}
+.games-holder div .game-score.opend {
+    z-index: 5 !important;
+    opacity: 1 !important;
+}
+
 .games-holder div img:hover {
+    transform: translate(4px, 4px);
     box-shadow: 0 0 #1a1818;
 }
 .footer {
@@ -51,4 +74,11 @@
 }
 .footer img {
     cursor: pointer;
+}
+
+.opend {
+    transform: translate(4px, 4px);
+    box-shadow: 0 0 #1a1818 !important;
+    cursor: default !important;
+    opacity: 0;
 }
